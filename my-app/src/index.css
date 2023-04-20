@@ -26,10 +26,6 @@ code {
 
 nav ul {
   list-style-type: none;
-  display: grid;
-  grid-template-columns: repeat(6, auto);
-  text-align: center;
-  padding: 0;
 }
 
 footer ul {
@@ -102,6 +98,13 @@ main img {
 }
 
 nav {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  text-align: center;
+  padding: 0;
+}
+
+nav a {
   font-family: 'Karla';
   font-style: normal;
   font-weight: 800;
@@ -194,6 +197,14 @@ nav {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   padding: 5% 10%;
+}
+
+@media screen and (max-width: 900px) {
+  .highlights {
+    grid-auto-flow: row;
+    background-color: green;
+    grid-template-columns: 1fr;
+  }
 }
 
 .highlights h1 {
