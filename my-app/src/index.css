@@ -375,3 +375,9 @@ nav a {
   width: 40%;
   object-position: 90%;
 }
+
+form {
+  display: grid;
+  max-width: 200px;
+  gap: 20px;
+}
