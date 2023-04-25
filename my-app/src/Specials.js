@@ -4,7 +4,7 @@ import lemonDessert from './icons_assets/lemon dessert.jpg';
 
 function Specials() {
   return (
-    <section className="highlights">
+    <section className="highlights" id="special">
       <h1> This week's specials! </h1>
       <button type="button"> Online Menu </button>
       <section className="special">

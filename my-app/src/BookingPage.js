@@ -1,18 +1,31 @@
 import BookingForm from "./BookingForm.js";
-import {useState, useReducer} from "react";
+import Nav from "./Nav.js";
+import Header from "./Header.js";
+import {useReducer} from "react";
+import { useNavigate } from "react-router-dom";
+import {fetchAPI, submitAPI} from "./api.js";
 
 const updateTimes = (state, action) => {
-  //console.log(state); // array of availableTimes
-  //console.log(action); // date selected
-  return ["17:00", "18:00", "19:00", "20:00", "21:00"];
+  return fetchAPI(new Date(action.type));
 }
 
-function BookingPage() {
-  const initializeTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+const BookingPage = function() {
+  const initializeTimes = fetchAPI(new Date());
   const [availableTimes, setAvailableTimes] = useReducer(updateTimes, initializeTimes);
 
+  const navigate = useNavigate();
+  const submitForm = function(formData) {
+      if (submitAPI(formData)) {
+        navigate("/confirmation");
+      }
+  }
+
   return (
-    <BookingForm availableTimes={availableTimes} setAvailableTimes={setAvailableTimes} />
+    <>
+      <Header />
+      <Nav />
+      <BookingForm availableTimes={availableTimes} setAvailableTimes={setAvailableTimes} submitForm={submitForm} />
+    </>
   );
 }
 

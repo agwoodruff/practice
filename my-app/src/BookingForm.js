@@ -13,6 +13,7 @@ function BookingForm(props) {
     setOccassion("");
     setTime("");
     console.log("Form submitted");
+    props.submitForm();
   };
 
   return (
@@ -43,7 +44,7 @@ function BookingForm(props) {
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
-      <button type="submit" role="button" > Make Your Reservation </button>
+      <button type="submit" role="button"> Make Your Reservation </button>
     </form>
   );
 }
