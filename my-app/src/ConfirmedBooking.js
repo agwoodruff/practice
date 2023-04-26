@@ -10,7 +10,7 @@ function ConfirmedBooking() {
       <Nav />
       <section id="confirmation">
         <h1> Your reservation has been confirmed. </h1>
-        <button onClick={() => navigate("/")}> Back to homepage </button>
+        <button aria-label="On Click" onClick={() => navigate("/")}> Back to homepage </button>
       </section>
     </>
   );

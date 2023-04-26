@@ -75,6 +75,10 @@ footer h3, a {
   line-height: 130%;
 }
 
+.door-nav {
+  display: grid;
+}
+
 header {
   grid-area: header;
   padding-left: 35%;

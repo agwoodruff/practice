@@ -6,7 +6,7 @@ function Specials() {
   return (
     <section className="highlights" id="special">
       <h1> This week's specials! </h1>
-      <button type="button"> Online Menu </button>
+      <button aria-label="On Click" type="button"> Online Menu </button>
       <section className="special">
         <img src={greekSalad} alt="Greek salad"/>
         <h4> Greek Salad </h4>
