@@ -1,6 +1,7 @@
 import BookingForm from "./BookingForm.js";
 import Nav from "./Nav.js";
 import Header from "./Header.js";
+import Footer from "./Footer.js";
 import {useReducer} from "react";
 import { useNavigate } from "react-router-dom";
 import {fetchAPI, submitAPI} from "./api.js";
@@ -25,6 +26,7 @@ const BookingPage = function() {
       <Header />
       <Nav />
       <BookingForm availableTimes={availableTimes} setAvailableTimes={setAvailableTimes} submitForm={submitForm} />
+      <Footer />
     </>
   );
 }

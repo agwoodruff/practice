@@ -33,15 +33,14 @@ describe("Booking Form", () => {
   test('Validate HTML validation works', () => {
     render(<BrowserRouter><BookingPage /></BrowserRouter>);
     const nameInput = screen.getByLabelText(/Name:/);
-    expect(nameInput).toBeInvalid();
+    expect(nameInput).toBeRequired();
     const dateInput = screen.getByLabelText(/Date:/);
-    expect(dateInput).toBeInvalid();
+    expect(dateInput).toBeRequired();
     const timeInput = screen.getByLabelText(/Time:/);
-    expect(timeInput).toBeInvalid();
-    const numGuestsInput = screen.getByLabelText(/Number of guests:/);
-    expect(numGuestsInput).toBeInvalid();
-    const occasionInput = screen.getByLabelText(/Occasion:/);
-    expect(occasionInput).toBeInvalid();
+    expect(timeInput).toBeDisabled();
+    expect(timeInput).toBeRequired();
+    const occasionInput = screen.getByRole('combobox', {name: ""});
+    expect(occasionInput).toBeRequired();
   })
 
   test('Validate Javascript validation works when input is invalid', () => {
@@ -54,7 +53,7 @@ describe("Booking Form", () => {
     fireEvent.change(timeInput, " ");
     const numGuestsInput = screen.getByLabelText(/Number of guests:/);
     fireEvent.change(numGuestsInput, " ");
-    const occasionInput = screen.getByLabelText(/Occasion:/);
+    const occasionInput = screen.getByRole('combobox', {name: ""});
     fireEvent.change(occasionInput, " ");
     const submitButton = screen.getByRole("button");
     expect(submitButton).toBeDisabled();
@@ -71,7 +70,7 @@ describe("Booking Form", () => {
     fireEvent.change(timeInput, { target: { value: changedTimes[0]}});
     const numGuestsInput = screen.getByLabelText(/Number of guests:/);
     fireEvent.change(numGuestsInput, { target: { value: 2}});
-    const occasionInput = screen.getByLabelText(/Occasion:/);
+    const occasionInput = screen.getByRole('combobox', {name: ""});
     fireEvent.change(occasionInput, { target: { value: "Birthday"}});
     const submitButton = screen.getByRole("button");
     expect(submitButton).not.toBeDisabled();

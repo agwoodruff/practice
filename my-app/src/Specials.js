@@ -1,6 +1,8 @@
 import greekSalad from './icons_assets/greek salad.jpg';
 import bruchetta from './icons_assets/bruchetta.svg';
 import lemonDessert from './icons_assets/lemon dessert.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCar } from '@fortawesome/free-solid-svg-icons'
 
 function Specials() {
   return (
@@ -13,6 +15,7 @@ function Specials() {
         <h5> $12.99 </h5>
         <p> The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons. </p>
         <a href={" "}> Order a delivery </a>
+        <FontAwesomeIcon icon={faCar} className="icon"/>
       </section>
       <section className="special">
         <img src={bruchetta} alt="Bruchetta"/>
@@ -20,6 +23,7 @@ function Specials() {
         <h5> $5.99 </h5>
         <p> Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. </p>
         <a href={" "}> Order a delivery </a>
+        <FontAwesomeIcon icon={faCar} className="icon"/>
       </section>
       <section className="special">
         <img src={lemonDessert} alt="Lemon Dessert"/>
@@ -27,6 +31,7 @@ function Specials() {
         <h5> $5.00 </h5>
         <p> This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined. </p>
         <a href={" "}> Order a delivery </a>
+        <FontAwesomeIcon icon={faCar} className="icon"/>
       </section>
     </section>
   );

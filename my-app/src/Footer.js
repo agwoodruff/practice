@@ -1,6 +1,8 @@
 import logo from './icons_assets/Logo.svg';
 import { Link } from "react-router-dom";
 import {useEffect, useRef} from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
   const headerRef = useRef(null);
@@ -57,9 +59,12 @@ function Footer() {
       </section>
       <section className="social-media">
         <h2> Social Media Links </h2>
-        <h3> Address </h3>
-        <h3> Phone Number </h3>
-        <h3> Email </h3>
+        <FontAwesomeIcon icon={faTwitter} className="social-icon"/>
+        <h3> Twitter </h3>
+        <FontAwesomeIcon icon={faInstagram} className="social-icon"/>
+        <h3> Instagram </h3>
+        <FontAwesomeIcon icon={faFacebook} className="social-icon"/>
+        <h3> Facebook </h3>
       </section>
     </footer>
   );
